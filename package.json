@@ -1,0 +1,12 @@
+{
+  "name": "lightrpc-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Lioncat2002/lightrpc-test",
+  "author": "aniketfuryrocks <contact@aniketprajapati.me>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}
