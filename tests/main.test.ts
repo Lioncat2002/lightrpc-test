@@ -1,7 +1,7 @@
 import { Connection, Keypair, LAMPORTS_PER_SOL, Message, VersionedTransaction } from "@solana/web3.js";
 import { url } from "./urls";
 
-test('forwardTransaction', async () => {
+test('send and confirm transaction', async () => {
   const connection = new Connection(url, 'confirmed');
   const payer = Keypair.generate();
 
@@ -21,5 +21,11 @@ test('forwardTransaction', async () => {
   );
 
   versionedTx.sign([payer]);
-  await connection.sendTransaction(versionedTx);
+  const signature = await connection.sendTransaction(versionedTx);
+  const latestBlockHash = await connection.getLatestBlockhash();
+  await connection.confirmTransaction({
+    blockhash: latestBlockHash.blockhash,
+    lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+    signature: signature,
+  });
 });
