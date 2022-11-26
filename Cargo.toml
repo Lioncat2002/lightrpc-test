@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.0.27", features = ["derive"] }
-rayon = "1.6.0"
+run_script = "0.2.1"
