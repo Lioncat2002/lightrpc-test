@@ -7,5 +7,5 @@ Test and benchmark solana rpc protocol.
 
 ```
 $ yarn # install dependecies
-$ yarn test # run tests 
+$ yarn test:test-validator # run tests 
 ```
